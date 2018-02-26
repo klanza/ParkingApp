@@ -13,7 +13,7 @@ const app = express();
 // Serve static content for the app from the "public" directory
 app.use(express.static('public'));
 
-// P application/x-www-form-urlencoded, allowing HTML to be managed easily
+// Parse application/x-www-form-urlencoded, allowing HTML to be managed easily
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Parse application/JSON objects into easily readable forms
