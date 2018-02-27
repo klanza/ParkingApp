@@ -7,6 +7,9 @@ const exphbs = require('express-handlebars');
 // site to be deployed using heroku or other methods
 const PORT = process.env.PORT || 8000;
 
+// Requiring our models for syncing
+var db = require("./models");
+
 // Create variable for express, used to serve content
 const app = express();
 
@@ -26,11 +29,22 @@ app.set('view engine', 'handlebars');
 
 // Import routes and give the server access to them.
 // STILL NEED ROUTES FOR FILES AND CONTROLLER
-const routes = require('html-routes.js');
+require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
-app.use(routes);
+// const routes = require('html-routes.js');
+
+// app.use(routes);
+
+// Sync sequelize models and start app
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+});
+
 
 // Begins express server and lists the port being used in console as a report
-app.listen(PORT, function() {
-  console.log('App now listening at localhost:' + PORT);
-});
+// app.listen(PORT, function() {
+//   console.log('App now listening at localhost:' + PORT);
+// });
