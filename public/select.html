@@ -51,12 +51,13 @@
                     </div>
                     <div id ="results">
 
-                       <ul id="list">
-                   
-                          <li id="distance"></li>
-                          <li id="time"></li>
-                          <li id="address"></li>
-                        </ul>
+                       
+                          <div id="initial">Click Icons on the map to select your <strong>Parking Spot</strong></div>
+                          <div id="distance"></div>
+                          <div id="time"></div>
+                          <div id="address"></div>
+                          <div id="price"></div>
+                        
                       
                     </div>
                     <div id="book-data"> <!-- Contains all data to be shown after clicking on submit/book -->
@@ -66,7 +67,7 @@
                             <small id="email" class="form-text text-muted">We'll never share your email (except to make $$)</small>
                         </div>
                         <hr>
-                        <p>Address
+                        <p>Address of parking spot:
                         <br>
                         <div id="add"></div>
                         </p>
@@ -87,6 +88,7 @@
                     </div>
                     
                     <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" id="book" class="btn btn-primary">Book</button>
 
                 </div>
 
@@ -113,6 +115,8 @@
   <script>
   $(document).ready(function() {    
       $("#book-data").hide();
+      $("#submit").hide();
+      $("#book").hide();
        
        var locations = [
         [32.238,  -110.95014,"$4/hr"],
@@ -163,13 +167,18 @@
           //calculate distance between two points
           var time= Math.round(((distance)/80.4672)* 100) / 100;
           //Source: https://www.quora.com/What-is-the-assumed-walking-speed-in-Google-Mapss-time-estimates
+          //on click empty all divs and reload data from clicked marker
           $('#distance').empty(" ");
           $('#address').empty(" ");
           $('#time').empty(" ");
-
-          $('#distance').append("Distance from University of Arizona: "+"<br/>"+distance+ " meters");
-          $('#time').append("Walk time to University of Arizona: "+"<br/>"+time+ " minutes");
-          $('#address').append("Address of Parking Spot: "+"<br/>"+ results[0].formatted_address);
+          $('#price').empty(" ");
+          $('#time').empty(" ");
+          $('#initial').hide(" ");
+          $("#submit").show();
+          $('#distance').append("<strong>"+"Distance from University of Arizona: "+"</strong>"+"<br/>"+distance+ " meters"+"<br/>"+"<br/>");
+          $('#time').append("<strong>"+"Walk time to University of Arizona: "+"</strong>"+"<br/>"+time+ " minutes"+"<br/>"+"<br/>");
+          $('#address').append("<strong>"+"Address of Parking Spot: "+"</strong>"+"<br/>"+ results[0].formatted_address+"<br/>"+"<br/>");
+          $('#price').append("<strong>"+"Price of Parking Spot: "+"</strong>"+"<br/>"+ locations[i][2]+"<br/>"+"<br/>");
           //console.log(results);
           address= results[0].formatted_address;
 
@@ -185,10 +194,17 @@
   event.preventDefault();
   $("#book-data").show();
   $("#results").hide();
+  $("#book").show();
+  $("#submit").hide();
+  
   // Wont submit the post if we are missing a body or a title
   $("#add").append(address);
   });
 
+$("#book").on("click", function handleFormBook(event) {
+  event.preventDefault();
+  
+  });
 
 
 
