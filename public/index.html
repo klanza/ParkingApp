@@ -9,22 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
-    <link rel="stylesheet" type='text/css' href='/public/assets/css/style.css'>
-
-    <style>
-        #map {
-            height: 100vh;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .alert {
-            margin-top: 20px;
-        }
-        #currentLocationCheckbox{
-            margin-left: 1px;
-        }
-    </style>
+    <link rel="stylesheet" type='text/css' href='assets/css/style.css'>
 
 </head>
 
@@ -41,7 +26,7 @@
                     <div>
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email (except to make $$)</small>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -58,15 +43,12 @@
                     </div>
                     <div class="form-group">
                         <label for="inputLocation">Time start</label>
-                        <input type="timeStart" class="form-control" id="timeStart" placeholder="6pm">
+                        <input type="time" class="form-control" id="timeStart" placeholder="6pm">
                     </div>
                     <div class="form-group">
                         <label for="inputLocation">Time end</label>
-                        <input type="timeEnd" class="form-control" id="timeEnd" placeholder="11pm">
+                        <input type="time" class="form-control" id="timeEnd" placeholder="11pm">
                     </div>
-
-
-
 
                     <button type="submit" class="btn btn-primary">Submit</button>
 
@@ -90,7 +72,8 @@
             var uluru = { lat: 32.2319, lng: -110.9501 };
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 14,
-                center: uluru
+                center: uluru,
+                // frameborder: 0
             });
             var marker = new google.maps.Marker({
                 position: uluru,
