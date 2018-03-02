@@ -1,4 +1,9 @@
-img {
+#car {
+    width: 10%;
+    height: 10%;
+    margin-top: 10px;
+}
+#pin{
     width: 10%;
     height: 10%;
 }
