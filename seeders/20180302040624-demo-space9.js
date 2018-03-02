@@ -6,7 +6,7 @@ module.exports = {
       availability: '1',
       location_lat: '32.22610592436308',
       location_lng: '-110.94341291251737',
-      address: '-110.94608253245707',
+      address: '1722 E. 7th St.',
       price: '10.00',
       owner_username: 'uofafan@fakesite.com',
       updatedAt: '2018-03-02 04:18:01',
