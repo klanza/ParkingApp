@@ -9,7 +9,8 @@ Claim/rent space, amount of time to rent
 NECESSARY:
 Going to need a database
 
-=======
+Darwood-  added map file to assests.  It's not permanent, but I am using it as a stand in for the front end until I have one I can connect the JS post/create functions to.  It is far from being usable and for now just returns the coordinates.
+
 # ParkingApp
 
 ParkingApp(working title) is a web application designed to solve the complex problem of parking and urban congestion. ParkingApp is a crowd sourced solution to parking in metropolitan areas, initially designed for a target market at the University in Tucson, Arizona. By allowing users to rent out their private parking spots we hope to solve the problem of underutilized parking infrastructure, while simultaneously generating passive income for users. Ideal for those who are visiting downtown areas, universities, sporting events, or may even be looking for a long term parking solution, ParkingApp is here to serve your needs!
@@ -88,3 +89,4 @@ Add additional notes about how to deploy this on a live system
 
 * Add Jan and TAs here
 * Thanks to The Coding Bootcamp for the support and education
+
