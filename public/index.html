@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BlackTop or Park Place</title>
+    <title>Park Place</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
@@ -17,77 +17,49 @@
     <div class="container-fluid">
         <div class="span12" id="form">
             <div class="row">
-
-                <div class="form-group ion-text col-sm-3" id="sidebar">
-                    <div class='alert alert-primary'>
-                        <h4>Parking App</h4>
-                        <!-- <img src='assets/images/car.png' id='carIcon'> -->
-                    </div>
-                    <div>
-                        <label for="inputEmail">Email address</label>
-                        <input type="email" class="form-control" id="inputEmail" aria-describedby="email" placeholder="Enter email">
-                        <small id="email" class="form-text text-muted">We'll never share your email (except to make $$)</small>
-                    </div>
-                    <hr>
-                    <div class="form-group">
-                        <label for="inputLocation">Location of Event</label>
-                        <input type="address" class="form-control" id="inputLocation" placeholder="Location">
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="currentLocationCheckbox">
-                        <label class="form-check-label" for="currentLocationCheckbox">Use current location</label>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputDate">Date</label>
-                        <input type="date" class="form-control" id="date" placeholder="2/27/2018">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputLocation">Time start</label>
-                        <input type="time" class="form-control" id="timeStart" placeholder="6pm">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputLocation">Time end</label>
-                        <input type="time" class="form-control" id="timeEnd" placeholder="11pm">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-
+                <div class="form-group ion-text col-sm-3" id="a">
                 </div>
+                <div class="form-group ion-text col-sm-6" id="b">
 
-                <div class="form-group ion-text col-sm-9">
-                    <div class='embed-responsive embed-responsive-4by3'>
-                        <div id='map' class='embed-responsive-item'>
-
-                        </div>
+                    <div class="jumbotron bg-primary">
+                        <h1 class="display-4 text-light" href="index.html">Park Place</h1>
+                        <hr>
+                        <p class="lead text-white">Find a parking space to rent for local events in the UofA area!</p>
                     </div>
                 </div>
+                <div class="form-group ion-text col-sm-3" id="c">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group ion-text col-sm-3" id="1">
+            </div>
+            <div class="form-group ion-text col-sm-3" id="2">
+                <div class="card rounded">
+                    <div class="card-body">
+                        <h4>I have a parking space</h4>
+                        <br>
+                        <a class="btn btn-primary" href="new-space.html" role="button">Rent it!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group ion-text col-sm-3" id="3">
+                <div class="card rounded">
+                    <div class="card-body">
+                        <h4>I need a parking space</h4>
+                        <br>
+                        <a class="btn btn-primary" href="select.html" role="button">Find a spot!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group ion-text col-sm-3" id="4">
 
             </div>
-            <!-- end row -->
+            <img src="assets/images/carToken.jpg" class='mx-auto'>
         </div>
     </div>
+    </div>
 
-    <script>
-        function initMap() {
-            var uluru = { lat: 32.2319, lng: -110.9501 };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 14,
-                center: uluru,
-                mapTypeId: google.maps.MapTypeId.HYBRID,
-                // labels: true
-            });
-            var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-            });
-        }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhIiIOhvGAfKAPnFtIiEiHJoqc__ui79w&callback=initMap">
-    </script>
-
-
-
-    <!-- <script src=".\map.js"></script> -->
 </body>
 
 </html>

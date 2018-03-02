@@ -1,14 +1,6 @@
-#currentLocationCheckbox{
-    margin-left: 1px;
-}
-
-#carIcon {
-    width: 50%;
-    height: 50%
-}
-
-currentLocationCheckbox {
-    checked: true;
+img {
+    width: 10%;
+    height: 10%;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
