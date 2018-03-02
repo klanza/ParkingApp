@@ -2,13 +2,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
-
+require('dotenv').config();
 // Port that site is to be accessed on, process.env.PORT is included to allow
 // site to be deployed using heroku or other methods
 const PORT = process.env.PORT || 8000;
 
 // Requiring our models for syncing
 var db = require('./models');
+
+
 
 // Create variable for express, used to serve content
 const app = express();
