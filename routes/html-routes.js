@@ -14,7 +14,7 @@ module.exports = function(app) {
 
   // index route -- will load basic front page
   app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, ''));
+    res.sendFile(path.join(__dirname, '../public/select.html'));
   });
 
   // Planned route -- display user page, with spots they are renting
