@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
-
+// require('dotenv').config();
 // Port that site is to be accessed on, process.env.PORT is included to allow
 // site to be deployed using heroku or other methods
 const PORT = process.env.PORT || 8000;
@@ -36,7 +36,7 @@ require('./routes/html-routes.js')(app);
 // app.use(routes);
 
 // Sync sequelize models and start app
-db.sequelize.sync({force: true}).then(function() {
+db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log('App listening on PORT ' + PORT);
   });

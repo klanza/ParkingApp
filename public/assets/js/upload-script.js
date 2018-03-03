@@ -52,10 +52,18 @@ $("#submit").on("click", function() {
         function() {
             console.log("created new new space");
             // Reload map to show new space
-        }
+        },
+        clearValues()
     );
+    
 })
 
+var clearValues = function(){
+    $("#newSpaceAddress").val("");
+    $("#newSpacePrice").val("");
+    $("#InputEmail").val("");
+    $("#newCoordinate").val("");
+}
 
 
 // other values will be blank or automatic
