@@ -12,9 +12,26 @@ const path = require('path');
 module.exports = function(app) {
   // Each of the below routes handle the HTML page that the user gets sent to.
 
+<<<<<<< HEAD
   // index route -- will load basic front page
   app.get('/home', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/select.html'));
+=======
+  // index route -- will load basic front page to direct you to select/new
+  // NEED HTML FROM LUKE
+  app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+  });
+
+  // rental route -- allow users to rent a space and reserve it for themselves
+  app.get('/rent', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/select.html'));
+  });
+
+  // space creation route -- allows users to create a new space to be added
+  app.get('/new', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/new-space.html'));
+>>>>>>> master
   });
 
   // Planned route -- display user page, with spots they are renting

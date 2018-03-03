@@ -61,4 +61,5 @@ typings/
 .env
 
 # Sensitive information files
-config/config.json
+config/*.json
+config/

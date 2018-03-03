@@ -1,14 +1,14 @@
-var db = require("../models");
+var db = require('../models');
 
-//Routes
+// Routes
 module.exports = function(app) {
-
   // POST route for saving a new post
-  app.post("/api/space", function(req, res) {
+  app.post('/api/space', function(req, res) {
     db.Space.create(req.body).then(function(dbSpace) {
       res.json(dbSpace);
     });
   });
+<<<<<<< HEAD
   app.get("/space-info", function(req, res) {
     db.Space.findAll({})
     .then(function(dbSpace) {
@@ -16,3 +16,6 @@ module.exports = function(app) {
     });
   });
 };
+=======
+};
+>>>>>>> master

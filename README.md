@@ -22,7 +22,8 @@ In order to get this program running on a local system for development or testin
 * Make sure to change the 'config.json' inside the 'config' folder to the information corresponding to your local SQL database.
 * Execute the 'npm install' command when inside the cloned repository in order to install the necessary node packages.
 * Run the server.js file to allow the sequelize ORM to setup the tables and their relations.
-* Inside the 'db' folder is a seeds.sql file, use this file and your preferred method to seed the SQL database.
+* Rune the command "$ node_modules/.bin/sequelize db:seed:all" in order to run the datbase seeds
+	* Use the command "heroku run sequelize db:seed:all --env production --app 'HEROKU-APP-NAME' to deploy the seeds for the database to the heroku server.
 
 ### Prerequisites
 
@@ -58,7 +59,7 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+In 
 
 ## Built With
 
