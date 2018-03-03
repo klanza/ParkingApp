@@ -37,10 +37,10 @@ module.exports = function(sequelize, DataTypes) {
         },
         bookedBy_username: {
             type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len: [1],
-            },
+            allowNull: true
+            // validate: {
+            //     len: [1],
+            // },
         },
         time_booked: {
             type: DataTypes.TIME,
