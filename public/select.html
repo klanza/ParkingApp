@@ -140,9 +140,9 @@
 
                 infowindow.setContent(results[0].formatted_address);
                 infowindow.open(map, marker);
-                var distance = Math.round((google.maps.geometry.spherical.computeDistanceBetween(a, b)) * 3.28 * 100) / 100;
+                var distance = Math.round((google.maps.geometry.spherical.computeDistanceBetween(a, b)) * 3.28) ;
                 //calculate distance between two points
-                var time = Math.round(((distance) / 80.4672) * 100) / 100;
+                var time = Math.round((distance) / 80.4672) ;
                 //Source: https://www.quora.com/What-is-the-assumed-walking-speed-in-Google-Mapss-time-estimates
                 //on click empty all divs and reload data from clicked marker
                 $('#distance').empty(" ");
