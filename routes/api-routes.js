@@ -9,5 +9,10 @@ module.exports = function(app) {
       res.json(dbSpace);
     });
   });
-
+  app.get("/space-info", function(req, res) {
+    db.Space.findAll({})
+    .then(function(dbSpace) {
+      res.json(dbSpace);
+    });
+  });
 };
