@@ -58,3 +58,7 @@ module.exports = function(sequelize, DataTypes) {
     });
     return Space;
 };
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
