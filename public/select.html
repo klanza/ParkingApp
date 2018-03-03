@@ -154,10 +154,10 @@
                 $("#submit").show();
                 $('#distance').append("<strong>" + "Distance from University of Arizona: " + "</strong>" + "<br/>" + distance + " meters" + "<br/>" + "<br/>");
                 $('#time').append("<strong>" + "Walk time to University of Arizona: " + "</strong>" + "<br/>" + time + " minutes" + "<br/>" + "<br/>");
-                $('#address').append("<strong>" + "Address of Parking Spot: " + "</strong>" + "<br/>" + results[0].formatted_address + "<br/>" + "<br/>");
+                $('#address').append("<strong>" + "Address of Parking Spot: " + "</strong>" + "<br/>" + locations[i].address + "<br/>" + "<br/>");
                 $('#price').append("<strong>" + "Price of Parking Spot: " + "</strong>" + "<br/>" + "$" + locations[i].price + "/hr" + "<br/>" + "<br/>");
                 //console.log(results);
-                address = results[0].formatted_address;
+                address = locations[i].addresss;
               });
             }
           })(marker, i));
@@ -186,5 +186,6 @@
 
 
 </body>
+
 
 </html>

@@ -14,6 +14,7 @@ module.exports = function(app) {
   app.post('/api/space', function(req, res) {
     db.Space.create(req.body).then(function(dbSpace) {
       res.json(dbSpace);
+      console.log(dbSpace.dataValues);
     });
   });
 
