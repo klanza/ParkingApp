@@ -11,19 +11,22 @@ map = new google.maps.Map(document.getElementById('map'), {
 });
 
 // Click listener 
-map.addListener('click', function(space) {
-    placeMarkerAndStoreLocation(space.latLng, map);
+google.maps.event.addListener(map, 'click', function(space) {
+    placeMarkerAndStoreLocation(space.latLng);
 });
 }
+var marker;
 
+function placeMarkerAndStoreLocation(location) {
+    if (marker == null)
+ {
+   marker = new google.maps.Marker({
+      position: location,
+      map: map
+  }); } else {   marker.setPosition(location); } 
 
-function placeMarkerAndStoreLocation(latLng, map) {
-    var marker = new google.maps.Marker({
-    position: latLng,
-    map: map
-});
-locationLat = latLng.lat();
-locationLng = latLng.lng();
+locationLat = location.lat();
+locationLng = location.lng();
 console.log(locationLat, locationLng);
 $("#newCoordinate").val(locationLat +" "+ locationLng);
 }
