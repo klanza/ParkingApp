@@ -12,8 +12,8 @@ map = new google.maps.Map(document.getElementById('map'), {
 
 // Click listener 
 map.addListener('click', function(space) {
-    placeMarkerAndStoreLocation(space.latLng, map);
-});
+        placeMarkerAndStoreLocation(space.latLng, map);
+    });
 }
 
 
