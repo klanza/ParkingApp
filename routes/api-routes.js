@@ -8,6 +8,7 @@ module.exports = function(app) {
       res.json(dbSpace);
     });
   });
+  
   //PUT route for updating booked parking spot 
   app.put("/api/space/:id", function(req, res) {
   	db.Space.findOne( 
@@ -54,6 +55,11 @@ module.exports = function(app) {
       console.log("Parking spot deleted")
     }).catch(function(e) {
       console.warn(e);
+
+  app.get("/space-info", function(req, res) {
+    db.Space.findAll({})
+    .then(function(dbSpace) {
+      res.json(dbSpace);
     });
   });
 };

@@ -15,7 +15,7 @@ module.exports = function(app) {
   // index route -- will load basic front page to direct you to select/new
   // NEED HTML FROM LUKE
   app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/select.html'));
+    res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 
   // rental route -- allow users to rent a space and reserve it for themselves

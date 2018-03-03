@@ -11,21 +11,6 @@
         crossorigin="anonymous">
     <link rel="stylesheet" type='text/css' href='/public/assets/css/style.css'>
 
-    <style>
-        #map {
-            height: 100vh;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .alert {
-            margin-top: 20px;
-        }
-        #currentLocationCheckbox{
-            margin-left: 1px;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -33,17 +18,19 @@
         <div class="span12" id="form">
             <div class="row">
 
-                <div class="form-group ion-text col-sm-3" id="sidebar">
-                    <div class='alert alert-primary'>
-                        <h4>Parking App</h4>
-                        <p>Add new Space</p>
+                <div class="form-group ion-text col-sm-3 pr-0" id="sidebar">
+                    <div class='alert alert-primary bg-primary'>
+                        <h2 class='text-light text-center display-5'>PARK PLACE</h2>
+                        
                     </div>
+                    <h4>Add your space to rent</h4>
+                    <hr>
                     <div>
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
-                    <hr>
+                   <br>
                     <div class="form-group">
                         <label for="address">Address</label>
                         <input type="address" class="form-control" id="newSpaceAddress" placeholder="Street Address">
@@ -81,9 +68,6 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhIiIOhvGAfKAPnFtIiEiHJoqc__ui79w&callback=initMap">
     </script>
 
-
-
-    <!-- <script src=".\map.js"></script> -->
 </body>
 
 </html>
