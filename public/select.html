@@ -126,7 +126,7 @@
             label: {
               text: "$" + locations[i].price + "/hr",
               color: 'white',
-
+              databseId: locations[i].id,
             }
 
           });
@@ -140,24 +140,26 @@
 
                 infowindow.setContent(results[0].formatted_address);
                 infowindow.open(map, marker);
-                var distance = Math.round((google.maps.geometry.spherical.computeDistanceBetween(a, b)) * 3.28) ;
+                var distance = Math.round((google.maps.geometry.spherical.computeDistanceBetween(a, b)) * 3.28);
                 //calculate distance between two points
-                var time = Math.round((distance) / 80.4672) ;
+                var time = Math.round((distance) / 80.4672);
                 //Source: https://www.quora.com/What-is-the-assumed-walking-speed-in-Google-Mapss-time-estimates
                 //on click empty all divs and reload data from clicked marker
-                $('#distance').empty(" ");
-                $('#address').empty(" ");
-                $('#time').empty(" ");
-                $('#price').empty(" ");
-                $('#time').empty(" ");
+                $("#book").hide();
+                // $('#distance').empty(" ");
+                // $('#address').empty(" ");
+                // $('#time').empty(" ");
+                // $('#price').empty(" ");
+                // $('#time').empty(" ");
                 $('#initial').hide(" ");
                 $("#submit").show();
-                $('#distance').append("<strong>" + "Distance from University of Arizona: " + "</strong>" + "<br/>" + distance + " meters" + "<br/>" + "<br/>");
-                $('#time').append("<strong>" + "Walk time to University of Arizona: " + "</strong>" + "<br/>" + time + " minutes" + "<br/>" + "<br/>");
-                $('#address').append("<strong>" + "Address of Parking Spot: " + "</strong>" + "<br/>" + locations[i].address + "<br/>" + "<br/>");
-                $('#price').append("<strong>" + "Price of Parking Spot: " + "</strong>" + "<br/>" + "$" + locations[i].price + "/hr" + "<br/>" + "<br/>");
+                $('#distance').html("<strong>" + "Distance from University of Arizona: " + "</strong>" + "<br/>" + distance + " meters" + "<br/>" + "<br/>");
+                $('#time').html("<strong>" + "Walk time to University of Arizona: " + "</strong>" + "<br/>" + time + " minutes" + "<br/>" + "<br/>");
+                $('#address').html("<strong>" + "Address of Parking Spot: " + "</strong>" + "<br/>" + locations[i].address + "<br/>" + "<br/>");
+                $('#price').html("<strong>" + "Price of Parking Spot: " + "</strong>" + "<br/>" + "$" + locations[i].price + "/hr" + "<br/>" + "<br/>");
                 //console.log(results);
-                address = locations[i].addresss;
+                address = locations[i].address;
+                id = locations[i].id
               });
             }
           })(marker, i));
@@ -178,7 +180,16 @@
       });
       $("#book").on("click", function handleFormBook(event) {
         event.preventDefault();
-
+        let updateValues = {
+          id: id,
+          availability: false,
+          bookedBy_username: $('#inputEmail').val()
+        }
+        $.ajax({
+          method: 'PUT',
+          url: '/api/space',
+          data: updateValues,
+        })
       });
     });
   </script>

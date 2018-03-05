@@ -19,20 +19,15 @@ module.exports = function(app) {
   });
 
   // PUT route for updating booked parking spot
-  app.put('/api/space/:id', function(req, res) {
-    db.Space.findOne(
+  app.put('/api/space/', function(req, res) {
+    db.Space.update(req.body,
       {
         where: {
-          id: req.params.id,
+          id: req.body.id,
         },
       })
       .then(function(dbSpace) {
-        dbSpace.updateAttributes({
-          availability: false,
-          bookedBy_username: req.body.bookedBy_username,
-          time_booked: req.body.date,
-        });
-        // res.json(dbSpace);
+        res.json(dbSpace);
       });
   });
   // PUT route for updating leaving a parking spot
@@ -40,7 +35,7 @@ module.exports = function(app) {
     db.Space.findOne(
       {
         where: {
-          id: req.params.id,
+          id: req.body.id,
         },
       })
       .then(function(dbSpace) {
