@@ -44,8 +44,10 @@
           </div>
           <div id="book-data">
             <!-- Contains all data to be shown after clicking on submit/book -->
+            <div id="confirmation">
+            </div>
             <div>
-              <label for="inputEmail">Email address</label>
+              <label for="inputEmail" id='email-label'>Email address</label>
               <input type="email" class="form-control" id="inputEmail" aria-describedby="email" placeholder="Enter email">
               <small id="email" class="form-text text-muted">We'll never share your email (except to make $$)</small>
             </div>
@@ -190,6 +192,11 @@
           url: '/api/space',
           data: updateValues,
         })
+        $('#inputEmail').hide()
+        $('#email-label').hide()
+        $('#email').hide()
+        $('#book').hide()
+        $('#confirmation').html('<strong> Thank you for booking a parking space using Park Place! </strong>')
       });
     });
   </script>
