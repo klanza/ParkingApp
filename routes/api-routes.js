@@ -1,4 +1,5 @@
 var db = require('../models');
+var nodemailer = require('nodemailer');
 
 // Routes
 module.exports = function(app) {
@@ -24,11 +25,44 @@ module.exports = function(app) {
       {
         where: {
           id: req.body.id,
-        },
-      })
+      },
+    })
       .then(function(dbSpace) {
-        res.json(dbSpace);
-      });
+
+        // Email Sender
+        return db.Space.findOne(
+          {
+            where: {
+              id: req.body.id,
+            },
+          })
+          .then(function(dbSpace) {
+            res.json(dbSpace);
+            console.log(dbSpace);
+            var transporter = nodemailer.createTransport({
+              service: 'gmail',
+              auth: {
+              user: 'park.place.app2@gmail.com',
+              pass: 'parkplacepassword'
+              }
+            });
+
+            var mailOptions = {
+              from: 'park.place.app2@gmail.com',
+              to: dbSpace.owner_username,
+              subject: 'Your Space Has been booked',
+              text: "Your space has been booked by " + dbSpace.bookedBy_username+ "."
+            };
+
+            transporter.sendMail(mailOptions, function(error, info){
+              if (error) {
+              console.log(error);
+              } else {
+              console.log('Email sent: ' + info.response);
+              }
+            });
+          });   
+    });
   });
   // PUT route for updating leaving a parking spot
   app.put('/api/vacate/:id', function(req, res) {
@@ -47,6 +81,10 @@ module.exports = function(app) {
         // res.json(dbSpace);
       });
   });
+
+
+
+
   // DELETE parking spot
   app.delete('/api/delete/:id', function(req, res) {
     db.Space.destroy({
