@@ -8,7 +8,7 @@ const exphbs = require('express-handlebars');
 const PORT = process.env.PORT || 8000;
 
 // Requiring our models for syncing
-var db = require('./models');
+const db = require('./models');
 
 // Create variable for express, used to serve content
 const app = express();

@@ -1,5 +1,5 @@
-var db = require('../models');
-var nodemailer = require('nodemailer');
+const db = require('../models');
+const nodemailer = require('nodemailer');
 
 // Routes
 module.exports = function(app) {
