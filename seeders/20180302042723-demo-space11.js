@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Spaces', [{
-      availability: '0',
+      availability: '1',
       location_lat: '32.23746462118062',
       location_lng: '-110.94608253245707',
       address: '623 E. Euclid Ave.',

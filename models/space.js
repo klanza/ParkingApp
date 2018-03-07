@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
             },
         },
         price: {
-            type: DataTypes.DECIMAL(10,2),
+            type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
             validate: {
                 len: [1],
@@ -37,10 +37,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         bookedBy_username: {
             type: DataTypes.STRING,
-            allowNull: true
-            // validate: {
-            //     len: [1],
-            // },
+            allowNull: true,
         },
         time_booked: {
             type: DataTypes.TIME,

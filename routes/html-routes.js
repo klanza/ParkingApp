@@ -13,7 +13,6 @@ module.exports = function(app) {
   // Each of the below routes handle the HTML page that the user gets sent to.
 
   // index route -- will load basic front page to direct you to select/new
-  // NEED HTML FROM LUKE
   app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
