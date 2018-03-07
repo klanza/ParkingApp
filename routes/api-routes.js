@@ -28,7 +28,6 @@ module.exports = function(app) {
       },
     })
       .then(function(dbSpace) {
-
         // Email Sender
         return db.Space.findOne(
           {
@@ -39,29 +38,43 @@ module.exports = function(app) {
           .then(function(dbSpace) {
             res.json(dbSpace);
             console.log(dbSpace);
-            var transporter = nodemailer.createTransport({
+            let transporter = nodemailer.createTransport({
               service: 'gmail',
               auth: {
               user: 'park.place.app2@gmail.com',
-              pass: 'parkplacepassword'
-              }
+              pass: 'parkplacepassword',
+              },
             });
 
-            var mailOptions = {
+            let mailOwner = {
               from: 'park.place.app2@gmail.com',
               to: dbSpace.owner_username,
               subject: 'Your Space Has been booked',
-              text: "Your space has been booked by " + dbSpace.bookedBy_username+ "."
+              text: 'Your space has been booked by ' + dbSpace.bookedBy_username+ '.',
             };
 
-            transporter.sendMail(mailOptions, function(error, info){
+            let mailRenter = {
+              from: 'park.place.app2@gmail.com',
+              to: dbSpace.bookedBy_username,
+              subject: 'You have booked a space at ' + dbSpace.address + '!',
+              text: 'The price per hour of the space you have rented is $' + dbSpace.price + '/hr.',
+            };
+
+            transporter.sendMail(mailOwner, function(error, info) {
+              if (error) {
+              console.log(error);
+              } else {
+              console.log('Email sent: ' + info.response);
+              }
+          });
+            transporter.sendMail(mailRenter, function(error, info) {
               if (error) {
               console.log(error);
               } else {
               console.log('Email sent: ' + info.response);
               }
             });
-          });   
+          });
     });
   });
   // PUT route for updating leaving a parking spot
@@ -81,8 +94,6 @@ module.exports = function(app) {
         // res.json(dbSpace);
       });
   });
-
-
 
 
   // DELETE parking spot

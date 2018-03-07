@@ -91,10 +91,13 @@ $(document).ready(function () {
     });
     $("#book").on("click", function handleFormBook(event) {
     event.preventDefault();
+    var dt = new Date();
+    var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
     let updateValues = {
         id: id,
         availability: false,
-        bookedBy_username: $('#inputEmail').val()
+        bookedBy_username: $('#inputEmail').val(),
+        time_booked: time,
     }
     $.ajax({
         method: 'PUT',
