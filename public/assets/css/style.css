@@ -7,7 +7,28 @@
     width: 10%;
     height: 10%;
 }
-
+.card {
+    width: 66%;
+    
+}
+.card-body {
+    padding: 0px;
+}
+#indexBody {
+    background-image: url("../images/parkinglot.jpg");
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+#splash-text {
+    margin: 15px;
+}
+body {
+    background-color: rgb(238, 238, 238);
+}
+#splashBtn {
+    margin: 10px;
+}
 /* Extra small devices (portrait phones, less than 576px) */
 /* No media query since this is the default in Bootstrap */
 
