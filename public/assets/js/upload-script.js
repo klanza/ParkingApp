@@ -2,10 +2,13 @@
 let map;
 let locationLat;
 let locationLng;
+<<<<<<< HEAD
 
 /**
  * Function to generate map for Google Maps api
  */
+=======
+>>>>>>> 0307e0801d06a71f90e2fc78619acbacd22a7c4c
 function initMap() {
 map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 32.2319, lng: -110.9501},

@@ -29,6 +29,10 @@ body {
 #splashBtn {
     margin: 10px;
 }
+
+#welcome {
+    padding:62px 32px 0px 32px;
+}
 /* Extra small devices (portrait phones, less than 576px) */
 /* No media query since this is the default in Bootstrap */
 

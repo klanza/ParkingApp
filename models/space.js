@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     availability: DataTypes.BOOLEAN,
   }, {});
   Space.associate = function(models) {
+<<<<<<< HEAD
+=======
+    // associations can be defined here
+>>>>>>> 0307e0801d06a71f90e2fc78619acbacd22a7c4c
   };
   return Space;
 };
