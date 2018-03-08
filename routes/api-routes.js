@@ -3,13 +3,26 @@ var nodemailer = require('nodemailer');
 
 // Routes
 module.exports = function(app) {
-  // GET route for viewing spots
+  // GET route for viewing all spots
   app.get('/space-info', function(req, res) {
     db.Space.findAll({})
       .then(function(dbSpace) {
         res.json(dbSpace);
       });
   });
+
+  // GET route for viewing a single spot
+  app.get('/api/space/:id', function(req, res) {
+    db.Space.findOne({
+      where: {
+        id: req.params.id,
+      },
+    })
+      .then(function(dbSpace) {
+        res.json(dbSpace);
+      });
+  });
+
 
   // POST route for saving a new post
   app.post('/api/space', function(req, res) {
