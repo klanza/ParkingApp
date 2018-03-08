@@ -3,6 +3,7 @@ $(document).ready(function() {
     let locationArray = location.split('/');
     let spaceId = locationArray[locationArray.length - 1];
     let space;
+    let hourDiff;
     $.get('/api/space/' + spaceId, function(data) {
         space = data;
     }).then(function(space) {
@@ -33,31 +34,50 @@ $(document).ready(function() {
                     });
                 };
             })(marker));
-            console.log(space.bookedBy_username)
+            let dt = new Date();
+            let time = dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds();
             let username = space.bookedBy_username.split('@');
-            $('#welcome-message').text('Welcome ' + username[0] + '!');
+            $('#welcome-message').text(`Welcome ${username[0]}!`);
+            $('#price-information').html(`You booked your spot at ${space.address} at <strong>${space.time_booked}</strong>.`);
+            $('#time-information').html(`The current time is <strong>${time}</strong>.`);
+            let valuestart = space.time_booked;
+            let valuestop = time;
+            let timeStart = new Date('01/01/2018 ' + valuestart).getHours();
+            let timeEnd = new Date('01/01/2018 ' + valuestop).getHours();
+            hourDiff = timeEnd - timeStart;
+            let total = hourDiff * space.price;
+            if (hourDiff <= 1) {
+                $('#total').html(`You have been renting this spot for 1 hour. Your total price is $${space.price}.`);
+            } else if (hourDiff > 1) {
+                $('#total').html(`You have been renting this spot for ${hourDiff} hours. Your total price is $${total}.`);
+            };
         }// loadmap ends
         loadmap();
     });
-    $('#book').on('click', function handleFormBook(event) {
+    $('#checkout-button').on('click', function(event) {
         event.preventDefault();
         let dt = new Date();
         let time = dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds();
+        if (hourDiff < 1) {
+            hourDiff = 1;
+        }
         let updateValues = {
-            id: id,
-            availability: false,
-            bookedBy_username: $('#inputEmail').val(),
-            time_booked: time,
+            id: space.id,
+            availability: true,
+            bookedBy_username: '',
+            time_vacated: time,
         };
         $.ajax({
             method: 'PUT',
-            url: '/api/space',
+            url: '/api/vacate',
             data: updateValues,
         });
-        $('#inputEmail').hide();
-        $('#email-label').hide();
-        $('#email').hide();
-        $('#book').hide();
-        $('#confirmation').html('<strong> Thank you for booking a parking space using Park Place! </strong>');
+        console.log(space)
+        let finalTotal = hourDiff * space.price;
+        $('#welcome-message').text(`Thank you for booking with Park Place! Please come again!`);
+        $('#price-information').empty();
+        $('#total').empty();
+        $('#time-information').html(`Your receipt: $${finalTotal}!`);
+        $('#checkout-button').hide();
     });
 });
