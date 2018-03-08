@@ -44,7 +44,7 @@ $(document).ready(function() {
             let valuestop = time;
             let timeStart = new Date('01/01/2018 ' + valuestart).getHours();
             let timeEnd = new Date('01/01/2018 ' + valuestop).getHours();
-            hourDiff = timeEnd - timeStart;
+            hourDiff = Math.abs(timeEnd - timeStart);
             let total = hourDiff * space.price;
             if (hourDiff <= 1) {
                 $('#total').html(`You have been renting this spot for 1 hour. Your total price is $${space.price}.`);
