@@ -72,7 +72,7 @@ $(document).ready(function() {
             url: '/api/vacate',
             data: updateValues,
         });
-        console.log(space)
+        console.log(space);
         let finalTotal = hourDiff * space.price;
         $('#welcome-message').text(`Thank you for booking with Park Place! Please come again!`);
         $('#price-information').empty();

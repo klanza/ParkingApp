@@ -2,46 +2,46 @@
 let map;
 let locationLat;
 let locationLng;
-<<<<<<< HEAD
 
 /**
  * Function to generate map for Google Maps api
  */
-=======
->>>>>>> 0307e0801d06a71f90e2fc78619acbacd22a7c4c
 function initMap() {
-map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 32.2319, lng: -110.9501},
-    zoom: 15,
-    mapTypeId: google.maps.MapTypeId.HYBRID, // to add lables in satellite map
-    labels: true,
-});
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 32.2319, lng: -110.9501},
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.HYBRID, // to add lables in satellite map
+        labels: true,
+    });
 
-// Click listener
-google.maps.event.addListener(map, 'click', function(space) {
-    placeMarkerAndStoreLocation(space.latLng);
-});
+    // Click listener
+    google.maps.event.addListener(map, 'click', function(space) {
+        placeMarkerAndStoreLocation(space.latLng);
+    });
 }
 let marker;
 
+/**
+ * Function to generate map for Google Maps api
+ * @param {variable} location - locaiton of click event on map
+ */
 function placeMarkerAndStoreLocation(location) {
     if (marker == null) {
-   marker = new google.maps.Marker({
-      position: location,
-      map: map,
-  });
-} else {
-marker.setPosition(location);
-}
-
-locationLat = location.lat();
-locationLng = location.lng();
-console.log(locationLat, locationLng);
-$('#newCoordinate').val(locationLat +' '+ locationLng);
+        marker = new google.maps.Marker({
+            position: location,
+            map: map,
+        });
+    } else {
+        marker.setPosition(location);
+    }
+    locationLat = location.lat();
+    locationLng = location.lng();
+    console.log(locationLat, locationLng);
+    $('#newCoordinate').val(locationLat + ' ' + locationLng);
 }
 
 $('#submit').on('click', function() {
-// $("#submit").on("click", function(event) {
+    // $("#submit").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
     console.log('accepts click');
@@ -66,7 +66,7 @@ $('#submit').on('click', function() {
             // Reload map to show new space
         },
         clearValues()
-    );
+        );
 });
 
 let clearValues = function() {

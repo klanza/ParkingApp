@@ -23,12 +23,8 @@ $(document).ready(function() {
     });
     let infowindow = new google.maps.InfoWindow();
     let geocoder = new google.maps.Geocoder;
-<<<<<<< HEAD
     let marker;
     let i;
-=======
-    let marker, i;
->>>>>>> 0307e0801d06a71f90e2fc78619acbacd22a7c4c
     let address;
 
 /**
