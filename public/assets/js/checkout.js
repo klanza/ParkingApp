@@ -12,7 +12,6 @@ $(document).ready(function() {
             mapTypeId: google.maps.MapTypeId.HYBRID, // to add lables in satellite map
             labels: true,
         });
-        let infowindow = new google.maps.InfoWindow();
         let geocoder = new google.maps.Geocoder;
         /**
          * Function to load map in file
@@ -24,19 +23,19 @@ $(document).ready(function() {
                 label: {
                     databseId: space.id,
                 },
-
             });
-
-            google.maps.event.addListener(marker, 'click', (function(marker, i) {// on clicking on marker
+            google.maps.event.addListener(marker, 'click', (function(marker) {// on clicking on marker
                 return function() {
-                    let a = new google.maps.LatLng({lat: 32.2319, lng: -110.9501}); // destination
                     let b = new google.maps.LatLng({lat: space.location_lat, lng: space.location_lng}); // lat long of marker
                     geocoder.geocode({'location': b}, function(results) {
                         address = space.address;
                         id = space.id;
                     });
                 };
-            })(marker, i));
+            })(marker));
+            console.log(space.bookedBy_username)
+            let username = space.bookedBy_username.split('@');
+            $('#welcome-message').text('Welcome ' + username[0] + '!');
         }// loadmap ends
         loadmap();
     });
