@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": "Altecs21991!",
+      "password": "",
       "port": "3306",
       "database": "parking_db",
       "host": "127.0.0.1",
