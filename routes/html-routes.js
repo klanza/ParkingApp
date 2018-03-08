@@ -28,7 +28,8 @@ module.exports = function(app) {
   });
 
   // Planned route -- display user page, with spots they are renting
-//   app.get('/cms', function(req, res) {
-//     res.sendFile(path.join(__dirname, ''));
-//   });
+  // REQ.PARAMS FOR THIS
+  app.get('/checkout/:id', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/checkout.html'));
+  });
 };
