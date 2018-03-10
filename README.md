@@ -1,15 +1,3 @@
-## MVP List
-Create a location with a parking space  
-See photo/location/price? of parking space  
-	Use google map to show location  
-Space is available or unavailable  
-Claim/rent space, amount of time to rent  
-	Expires when time passes  
-
-NECESSARY:
-Going to need a database
-
-=======
 # ParkingApp
 
 ParkingApp(working title) is a web application designed to solve the complex problem of parking and urban congestion. ParkingApp is a crowd sourced solution to parking in metropolitan areas, initially designed for a target market at the University in Tucson, Arizona. By allowing users to rent out their private parking spots we hope to solve the problem of underutilized parking infrastructure, while simultaneously generating passive income for users. Ideal for those who are visiting downtown areas, universities, sporting events, or may even be looking for a long term parking solution, ParkingApp is here to serve your needs!
