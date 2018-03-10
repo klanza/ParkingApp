@@ -1,6 +1,6 @@
-# ParkingApp
+# Park Place
 
-ParkingApp(working title) is a web application designed to solve the complex problem of parking and urban congestion. ParkingApp is a crowd sourced solution to parking in metropolitan areas, initially designed for a target market at the University in Tucson, Arizona. By allowing users to rent out their private parking spots we hope to solve the problem of underutilized parking infrastructure, while simultaneously generating passive income for users. Ideal for those who are visiting downtown areas, universities, sporting events, or may even be looking for a long term parking solution, ParkingApp is here to serve your needs!
+Park Place is a web application designed to solve the complex problem of parking and urban congestion. Park Place is a crowd sourced solution to parking in metropolitan areas, initially designed for a target market at the University in Tucson, Arizona. By allowing users to rent out their private parking spots we hope to solve the problem of underutilized parking infrastructure, while simultaneously generating passive income for users. Ideal for those who are visiting downtown areas, universities, sporting events, or may even be looking for a long term parking solution, Park Place is here to serve your needs!
 
 ## Getting Started
 
