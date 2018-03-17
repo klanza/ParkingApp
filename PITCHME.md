@@ -13,7 +13,7 @@ Parking Match-maker
 - Adaptable solution to a common problem
 ---
 ### How does it work?
-[Try it now!](parkez.herokuapp.com)
+[Try it now!](https://parkez.herokuapp.com)
 ---
 ## Team Contributions and Challenges
 * Anindya Gupta - Full Stack Developer
