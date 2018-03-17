@@ -67,7 +67,7 @@ Linter
 * **Anindya Gupta** - *Full Stack Developer* - [anindya1234](https://github.com/anindya1234)
 * **Christopher Clark** - *Back-end Developer* - [christopheryc94](https://github.com/christopheryc94)
 * **Darwood Martin** - *Full Stack Developer* - [ddmartin3](https://github.com/ddmartin3)
-* **Luke Stewart** - *Front-end Developer* - [linkadinkadoo](https://github.com/linkadinkadoo)
+* **Luke Stewart** - *Front-end Developer* - [luke-stewart](https://github.com/linkadinkadoo)
 * **Kenneth Lanza** - *Full Stack Developer/Team Lead* - [klanza](https://github.com/klanza)
 
 
