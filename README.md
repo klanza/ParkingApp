@@ -42,6 +42,7 @@ Deployment was accomplished using Heroku and the JawsDB addon. This combination 
 ```
 Development
 ```
+* [Bootstrap](https://getbootstrap.com/) - Front end framework
 * [Express](https://expressjs.com) - Web application and server structure framework.
 * [Heroku](https://www.heroku.com/) - Server and database hosting for running application.
 * [MySQL](https://www.mysql.com/) - Server software, create and manage database.
