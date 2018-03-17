@@ -10,34 +10,32 @@ In order to get this program running on a local system for development or testin
 * Make sure to change the 'config.json' inside the 'config' folder to the information corresponding to your local SQL database.
 * Execute the 'npm install' command when inside the cloned repository in order to install the necessary node packages.
 * Run the server.js file to allow the sequelize ORM to setup the tables and their relations.
+	* Alternatively you can run "$ node_modules/.bin/sequelize db:migrate" to establish the necessary models.
 * Run the command "$ node_modules/.bin/sequelize db:seed:all" in order to run the datbase seeds
 	* Use the command "heroku run sequelize db:seed:all --env production --app 'HEROKU-APP-NAME' to deploy the seeds for the database to the heroku server.
+* Navigate to the directory for the cloned repository and run the command "node server.js"
+* Navigate to the hosted location (defaulted to localhost:8000) and try it out!
 
 ### Prerequisites
 
-
 ```
 SQL
+	Application runs on a SQL database
+Terminal
+	Terminal software to run server and install packages
+Node.js
+	Running server architecture and logic relies on Node and Node Package Manager (NPM)
 ```
-You will need a SQL program such as MySQL or SQLPro in order to create the database and view/seed the data within.
-```
-
-```
-
 ## Running the tests
 
-In order to 
+* Application testing uses functional tests for opening instances of the website, testing various routes and site functionality
+* First install Node.js and run the package install.
+* Then navigate to the directory and use the command 'mocha' to automaticall run all tests.
+	* Nightmare uses the Electron browser to open several instances of the site, running them to completion.
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 ## Deployment
 
-In 
+Deployment was accomplished using Heroku and the JawsDB addon. This combination allowed for a complete application with server and routing architecture, as well as a hosted database to be created. Database management using SQL interfaces such as MySQL allowed for easy database migration and seeding. For personal deployment, Sequelize commands with db:migrate and db:seed:all and their accompanying seed and migration files will fully populate the SQL schema located in the "db" folder.
 
 ## Built With
 
@@ -48,6 +46,8 @@ Development
 * [Heroku](https://www.heroku.com/) - Server and database hosting for running application.
 * [MySQL](https://www.mysql.com/) - Server software, create and manage database.
 * [Node.js](https://nodejs.org/en/) - Command line interface and data manipulation.
+* [Node.js](https://nodejs.org/en/) - Command line interface and data manipulation.
+* [Nodemailer](https://nodemailer.com/) - Node application for automatic emailing
 * [Sequelize](docs.sequelizejs.com/) - Object Relational Mapping package for managing SQL Database.
 ```
 Testing
