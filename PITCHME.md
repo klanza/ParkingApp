@@ -7,10 +7,10 @@
 Parking Match-maker
 ---
 ### Park Place Design
-- Crowd sourced solution to parking and urban congestion
+- Crowd sourced solution to parking
 - Renters utilize existing infrastructure
-- Owners can generate passive income
-- Ideal for downtown areas, universities, sporting events, etc.
+- Owners generate passive income
+- Adaptable solution to a common problem
 ---
 ### How does it work?
 ---
