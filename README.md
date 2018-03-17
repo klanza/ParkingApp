@@ -60,8 +60,6 @@ Testing
 Linter
 ```
 * [ESLint](https://eslint.org/) - Coding linter applied to project to keep consistent code styling
-  
-## Contributing
 
 ## Authors
 
@@ -70,10 +68,6 @@ Linter
 * **Darwood Martin** - *Full Stack Developer* - [ddmartin3](https://github.com/ddmartin3)
 * **Luke Stewart** - *Front-end Developer* - [luke-stewart](https://github.com/linkadinkadoo)
 * **Kenneth Lanza** - *Full Stack Developer/Team Lead* - [klanza](https://github.com/klanza)
-
-
-## License
-
 
 ## Acknowledgments
 
